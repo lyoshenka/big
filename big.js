@@ -20,11 +20,11 @@ window.onload = function() {
         e.style.display = 'inline';
         for (k = 0; typeof console === 'object' && k < notes.length; k++) console.log('%c%s: %s', 'padding:5px;font-family:serif;font-size:18px;line-height:150%;', n, notes[k].innerHTML.trim());
         if (e.firstChild && e.firstChild.nodeName === 'IMG') {
-            document.body.style.backgroundImage = 'url("' + e.firstChild.src + '")';
+            document.body.style.background = 'url("' + e.firstChild.src + '") center center / ' + (e.dataset.stretch ? 'cover' : 'contain') + ' no-repeat fixed';
             e.firstChild.style.display = 'none';
             if ('classList' in e) e.classList.add('imageText');
         } else {
-            document.body.style.backgroundImage = '';
+            document.body.style.background = '';
             document.body.style.backgroundColor = e.style.backgroundColor;
         }
         if (ti !== undefined) window.clearInterval(ti);
