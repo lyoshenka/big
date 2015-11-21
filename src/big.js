@@ -16,12 +16,12 @@ window.onload = function() {
 
   function go(n) {
     var slide = slides[n],
-        timeToNext = parseInt(slide.getAttribute('data-timeToNext') || 0, 10),
+        timeToNext = parseInt(slide.dataset.timeToNext || 0, 10),
         notes = slide.getElementsByTagName('notes');
 
     big.current = n;
 
-    document.body.className = slide.getAttribute('data-bodyclass') || '';
+    document.body.className = slide.dataset.bodyclass || '';
 
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = 'none';
