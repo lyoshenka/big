@@ -1,7 +1,5 @@
-[![Circle CI](https://circleci.com/gh/tmcw/big/tree/gh-pages.svg?style=svg&circle-token=2963848e42fe67b8a66a2ad2d6dd99d05bdde6a4)](https://circleci.com/gh/tmcw/big/tree/gh-pages)
-
 This is a ridiculous presentation system that works great for
-creative, hurried people. See [the demo](http://macwright.org/big/demo.html)
+creative, hurried people. See [the demo](http://lyoshenka.github.io/big/demo.html)
 for an example of it working.
 
 It makes text and images as big as they can be, gives you minimal
@@ -11,11 +9,15 @@ styling (`em`) and keyboard controls for navigation.
 
 You can skip every step by doing
 
-    wget https://raw.github.com/tmcw/big/gh-pages/big.quickstart.html
+    wget https://raw.github.com/lyoshenka/big/gh-pages/big.quickstart.html
 
 This is a **bundle of all JS, CSS, and HTML code** - which means that it's
 a bit harder to update, but there are **no external dependencies** here,
 so no conference-wifi-pwn.
+
+If you prefer Markdown over <div>s, use this
+
+    wget https://raw.github.com/lyoshenka/big/gh-pages/big.quickstart_md.html
 
 ## Slowstart
 
@@ -28,11 +30,10 @@ Otherwise, here are some tips:
 * Use `<div>` & `</div>` around each slide
 * You may be used to `em` displaying as italicized text, but in big emphasized
   text is green and unitalicized. You can change this default behavior in the header. <em>(Look, Ma-- CSS in action!)</em>
-* Paragraph tags aren't displayed in big. This can be a useful place for you
-  to store your speaking notes. (I don't actually understand this, but I've seen it done)
 * If you'll have internet access when you present, you can reference images
   hosted online. If you won't, any images you want to reference will need to
   be in the same folder as your presentation.
+* Speaker notes supported too!
 
 ## Examples
 
@@ -59,7 +60,7 @@ A full presentation looks like:
 <div><em>1.5k</em></div>
 <div><img src='http://farm3.static.flickr.com/2506/5757000880_509440308e_z.jpg' /> images too</div>
 <div data-bodyclass="new-shiny">per slide body classes</div>
-<div>JS+CSS <a href='https://github.com/tmcw/big'>github.com/ tmcw/ big</a></div>
+<div>JS+CSS <a href='https://github.com/lyoshenka/big'>github.com/ lyoshenka/ big</a></div>
 </body>
 </html>
 ```
@@ -107,15 +108,9 @@ big exposes a JavaScript API via the `big` object:
 * `big.reverse()`: go back 1 slide. at the first slide, do nothing.
 * `big.go(number)`: go to a specific slide, given its number.
 
-## Installation with `npm`
-
-big is available on `npm` as the `big-presentation` package.
-
-    npm install --save big-presentation
-
 ## Presentations with Big
 
-* [the demo](http://macwright.org/big/demo.html)
+* [the demo](http://lyoshenka.github.io/big/demo.html)
 * [javascript for cats](http://maxogden.github.com/slides/empirejs/index.html#0) by [Max Ogden](http://maxogden.com/) for [empire js](http://empirejs.org/) and there's a
   [great video of him presenting it](http://www.youtube.com/watch?v=GeCWaTML3D0)
 * [d3-geo](http://exposedata.com/talk/d3-geo/#0) by [Kai Chang](https://twitter.com/syntagmatic)
