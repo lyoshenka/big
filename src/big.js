@@ -57,10 +57,11 @@ window.onload = function() {
     resize();
 
     if (window.location.hash !== n) {
-      window.location.hash = n;
+      // window.location.hash = n;
+      window.history.replaceState({},'','#'+n); // edit hash without killing back button
     }
 
-    document.title = slide.textContent || slide.innerText;
+    document.title = slide.textContent;
   }
 
   function fwd() {
@@ -76,15 +77,27 @@ window.onload = function() {
   }
 
 
-  var timeout, i,
-      slides = document.getElementsByTagName('div'),
-      big = {
-        current: 0,
-        forward: fwd,
-        reverse: rev,
-        go: go,
-        length: slides.length
-      };
+  var timeout, i, slides, big;
+
+  if (document.body.dataset.md) {
+    console.log('yay');
+    s = document.body.textContent.split('---');
+    document.body.innerHTML = '';
+    for (i = 0; i < s.length; i++) {
+      var div = document.createElement("div");
+      div.innerHTML = marked(s[i].trim());
+      document.body.appendChild(div);
+    }
+  }
+
+  slides = document.getElementsByTagName('div');
+  big = {
+    current: 0,
+    forward: fwd,
+    reverse: rev,
+    go: go,
+    length: slides.length
+  };
 
   if (!slides) {
     return;
@@ -101,10 +114,13 @@ window.onload = function() {
   };
 
   document.onkeydown = function(e) {
-    if (e.which === 39 || e.which === 34 || e.which === 40) {
+    if (e.ctrlKey || e.altKey) {
+      return;
+    }
+    else if (e.which === 39 || e.which === 34 || e.which === 40) {
       fwd();
     }
-    if (e.which === 37 || e.which === 33 || e.which === 38) {
+    else if (e.which === 37 || e.which === 33 || e.which === 38) {
       rev();
     }
   };
