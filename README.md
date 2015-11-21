@@ -9,15 +9,17 @@ styling (`em`) and keyboard controls for navigation.
 
 You can skip every step by doing
 
-    wget https://raw.github.com/lyoshenka/big/gh-pages/big.quickstart.html
+    curl -L http://s.grin.io/big > index.html
+    python -m SimpleHTTPServer
+    # then open localhost:8000 in your browser
 
 This is a **bundle of all JS, CSS, and HTML code** - which means that it's
 a bit harder to update, but there are **no external dependencies** here,
 so no conference-wifi-pwn.
 
-If you prefer Markdown over <div>s, use this
+If you prefer Markdown over `<div>`s, use this
 
-    wget https://raw.github.com/lyoshenka/big/gh-pages/big.quickstart_md.html
+    curl -L http://s.grin.io/bigmd > index.html
 
 ## Slowstart
 
