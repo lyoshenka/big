@@ -81,7 +81,7 @@ window.onload = function() {
 
   if (document.body.dataset.md) {
     console.log('yay');
-    s = document.body.textContent.split('---');
+    s = document.body.innerHTML.split('---');
     document.body.innerHTML = '';
     for (i = 0; i < s.length; i++) {
       var div = document.createElement("div");
